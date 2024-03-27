@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.WaterMapper">
+
+    <select id="waterlist" resultType="com.example.demo.domain.Water">
+
+        select * from water
+    </select>
+
+    <select id="findWaterById" resultType="com.example.demo.domain.Water">
+        select * from water where id = #{id}
+    </select>
+
+
+    <select id="insertWater" resultType="com.example.demo.domain.Water">
+        insert into water(name,salary,mark) values  (#{name},#{salary},#{mark})
+    </select>
+
+    <select id="updateWater" resultType="com.example.demo.domain.Water">
+        update water SET name = #{name} , salary = #{salary} , mark = #{mark} where id = #{id}
+
+    </select>
+
+    <select id="deleteWaterById" resultType="com.example.demo.domain.Water">
+        delete from water where id = #{id}    </select>
+
+</mapper>

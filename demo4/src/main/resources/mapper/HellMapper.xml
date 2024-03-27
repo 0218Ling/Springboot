@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.HellMapper">
+
+        <select id="helllist" resultType="com.example.demo.domain.Hell">
+            select * from hell
+        </select>
+
+
+    <select id="insertHell" resultType="com.example.demo.domain.Hell">
+        insert into hell(name,phone,email,mark) values (#{name},#{phone},#{email},#{mark})
+    </select>
+
+
+    <select id="updateHell" resultType="com.example.demo.domain.Hell">
+        update  hell SET name = #{name} , phone = #{phone} , email = #{email} ,mark = #{mark}
+    </select>
+
+
+    <select id="findHellById" resultType="com.example.demo.domain.Hell">
+        select *
+        from hell where id = #{id}
+    </select>
+
+    <select id="deleteHellById" resultType="com.example.demo.domain.Hell">
+
+delete from hell where id = #{id}
+    </select>
+</mapper>

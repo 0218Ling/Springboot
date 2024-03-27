@@ -19,7 +19,7 @@ public class UserController {
         return userService.getUser(id).toString();
     }
     //通过id删除用户信息
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public String delete(int id){
         int result = userService.delete(id);
         if(result >= 1){
@@ -29,7 +29,7 @@ public class UserController {
         }
     }
     //更改用户信息
-    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
     public String update(User user){
         int result = userService.update(user);
         if(result >= 1){
@@ -39,7 +39,7 @@ public class UserController {
         }
     }
     //插入用户信息
-    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    @RequestMapping(value = "/insert", method = RequestMethod.PUT)
     public int insert(User user){
         return userService.save(user);
     }
